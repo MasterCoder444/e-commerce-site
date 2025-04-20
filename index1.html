@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LuxeTimeline</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /** Header **/
+    body {
+      margin: 0;
+      font-family: 'Brush Script';
+      background-color: #f3e6e6;
+      color: #1d1515;
+    }
+
+    header {
+      background-color: #c54ee2;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 5px rgba(148, 7, 230, 0.1);
+    }
+
+    .border {
+      border: 1.5px solid transparent;
+    }
+    .border:hover {
+      border: 1.2px solid white;
+      margin-bottom: 0.8px;
+    }
+
+    .logo {
+      font-size: 1.9rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .logo span {
+      font-size: 1.9rem;
+      color:  #5c1897; 
+
+    }
+    
+    /** Search box **/
+    .search-box input {
+      padding: 0.75rem;
+      border-radius: 5px;
+      border: none;
+      width: 450px;
+    }
+
+    .search-icon{
+      height: 12px;
+      width:8px;
+      display:flex;
+      justify-content:centre;
+      align-items:centre;
+    }
+    .search-box:hover{
+      border:3px solid rgb(226, 75, 231);
+      border-radius: 6px;
+      border-top-right-radius: -80px;
+      
+    }
+    
+    span {
+      font-size: 0.74rem;
+    }
+
+    .nav-second{
+      display: flex;
+      margin-top: -12px;
+      font-size:0.85rem;
+      font-weight: 700;
+    }
+
+    .nav-third a {
+      display: flex;
+       margin-top: -12px; /* Moves "India" slightly upwards */
+       font-size: 1.07rem;
+       font-weight: 750;
+       color: #007185;
+       margin-left: 15px;
+      cursor: pointer;
+    }
+
+    .nav-icons i {
+      margin-left: 30px;
+      cursor: pointer;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-around;
+      padding: 1rem;
+      background-color: #e3c8f5ea;
+    }
+
+    nav div {
+      text-align: center;
+      cursor: pointer;
+    }
+
+    nav div:hover {
+      color: rgb(160, 90, 240);
+    }
+    
+    
+   /** hero section **/
+   .hero-section {
+      background-image: url('hero_image.jpg');
+      background-size: cover;
+      height: 350px;
+      width: 1350px;
+      display:flex;
+      justify-self: center;
+      align-items: center;
+      align-items: flex-end;
+    }
+
+    .hero-msg {
+      background-color: white; /* Changed from #f3e6e6 */
+      color: black;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      width: 80%;
+      margin: 0 auto 25px auto;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+
+    .hero-msg a {
+      color: #007185;
+      margin-left: 6px;
+      cursor: pointer;
+    }
+    /** Banners **/
+    .banner {
+      background: url('g.jpg') center/cover;
+      height: 650px;
+      width: 1400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .banner1 {
+      background: url('shopping center.jpg') center/cover;
+      height: 400px;
+      width: 1350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .banner2 {
+      background: url('shopping1.jpg') center/cover;
+      height: 500px;
+      width: 1350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    
+
+    /** Shopping Section **/
+    .shop-section{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      background-color: #e2e7e6;
+    }
+
+    .box{
+      /* border:2px solid black;*/
+      height:400px;
+      width: 23%;
+      background-color: white;
+      padding: 20px 0px 15px;
+      margin-top: 15px;
+    }
+
+    .box-img {
+      height:300px;
+      background-size: cover;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+
+    }
+
+    .box-content {
+      margin-left: 1rem;
+      margin-right: 1rem;
+
+    }
+    .box-content P {
+      color: #007185;
+    }
+    
+    .box:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transform: translateY(-5px);
+      transition: all 0.3s ease-in-out;
+    }
+    /** Category Sectio **/
+    .section {
+      padding: 2rem;
+    }
+
+    .section h2 {
+      margin-bottom: 1rem;
+      color: rgb(138, 21, 255);
+    }
+     
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background-color: #e3c8f5ea;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(51, 51, 48, 0.425);
+    }
+ /** Footer **/
+    .foot-panel1 {
+      background-color: #2e2b2bfd;
+      color: rgb(153, 148, 148);
+      height: 300px;
+      display:flex;
+      justify-content: space-evenly;
+      font-weight: 200;
+    }
+
+    ul {
+      margin-top: 20px;
+    }
+
+    ul a {
+      display:block;
+      font-size: 0.85rem;
+      margin-top: 10px;
+      color: #e0e4eb;
+      cursor:pointer;
+    }
+
+    .foot-panel2 {
+      background-color: #2e2b2bfd;
+      color:white;
+      border-top: 0.5px solid white;
+      height :70px;
+      display: flex;
+      align-items: center;
+      font-weight: 200;
+    }
+    .logo1 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #fff;
+      height: 40px;
+      width: 80px;
+      align-items: center;
+      margin-left: 85px;
+    }
+    .logo1 span {
+      font-size: 1.9rem;
+      color:  #6e399c; 
+
+    }
+    
+    .foot-panel3 {
+      background-color: #111;
+      padding: 1rem;
+      text-align: center;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo border">Luxe<span>𝕿𝖎𝖒𝖊𝖑𝖎𝖓𝖊</span></div>
+    <div class="nav-location border">
+      <p> <i class="fa-solid fa-location-dot"></i>
+        <span>Deliver  to</span></p>
+      <p class="nav-third"><a>India</a></p>
+     </div>
+    <div class="search-box">
+      <input type="text" placeholder="Search for Products, Brands and More ">
+      <i class="fa-solid fa-magnifying-glass"></i>
+     </div>
+    <div class="nav-signin border">
+      <p><span>Hello,signin</span></p>
+      <p class="nav-second">Account & Lists</p>
+     </div>
+     <div class="nav-return border">
+      <p><span>Returns</span></p>
+      <p class="nav-second">& Orders</p>
+     </div>
+    <div class= "nav-cart ">
+    <div class="nav-icons">
+      <i class="fas fa-user"></i>
+      Profile
+      <i class="fas fa-shopping-cart"></i>
+      Cart
+      <i class="fas fa-store"></i>
+      Store
+    </div>
+    
+  </header>
+  
+  <nav>
+    <div><i class="fas fa-tshirt"></i><br>Fashion</div>
+    <div><i class="fas fa-laptop"></i><br>Electronics</div>
+    <div><i class="fas fa-couch"></i><br>Home</div>
+    <div><i class="fas fa-blender"></i><br>Appliances</div>
+    <div><i class="fa-solid fa-notes-medical"></i><br>Medi Fit</div>
+    <div><i class="fas fa-basketball"></i><br>Sports Hub</div>
+  </nav>
+  <div class= "hero-section">
+    <div class="hero-msg">
+      <p>You are on LuxeTimeline.com . You  can  also  shop  on  LuxeTimeline  for  Branded  millions  of  products.<a> Click Here to go to LuxeTimeline.in</a></p>
+    </div>
+  </div>
+
+  <div class="banner">
+    Exclusive Deals on Luxe Products
+  </div>
+  <div class="banner1">
+  </div>
+
+  <div class="shop-section">
+    <div class="box">
+      <div class="box-content">
+        <h2>Health & Personal Care</h2>
+        <div class="box-img" style="background-image: url('box2_image.jpg');"></div>
+        <a href="products.html"><p>See More</p></a>
+
+      </div>
+    </div>
+     <div class="box">
+      <div class="box-content">
+        <h2>Clothes</h2>
+        <div class="box-img" style="background-image: url('box1_image.jpg');"></div>
+        <a href="products.html"><p>See More</p></a>
+      </div>
+    </div>
+    <div class="box">
+      <div class="box-content">
+        <h2>Furniture</h2>
+        <div class="box-img" style="background-image: url('box3_image.jpg');"></div>
+        <a href="products.html"><p>See More</p></a>
+      </div>
+    </div>
+    <div class="box">
+      <div class="box-content">
+        <h2>Electronics</h2>
+        <div class="box-img" style="background-image: url('box4_image.jpg');"></div>
+        <a href="products.html"><p>See More</p></a>
+      </div>
+    </div>
+  </div>
+  <div class="shop-section">
+    <div class="box">
+      <div class="box-content">
+        <h2>Beauty Picks</h2>
+        <div class="box-img" style="background-image: url('box5_image.jpg');"></div>
+        <a href="products.html"><p>See More</p></a>
+      </div>
+    </div>
+    <div class="box">
+      <div class="box-content">
+        <h2>Pet Care</h2>
+        <div class="box-img" style="background-image: url('box6_image.jpg');"></div>
+        <a href="products.html"><p>See More</p></a>
+      </div>
+    </div>
+     <div class="box">
+      <div class="box-content">
+        <h2>New Arrivals of Toys</h2>
+        <div class="box-img" style="background-image: url('box7_image.jpg');"></div>
+        <a href="products.html"><p>See More</p></a>
+      </div>
+    </div>
+     <div class="box">
+      <div class="box-content">
+        <h2>Discover Fashion Trends</h2>
+        <div class="box-img" style="background-image: url('box8_image.jpg');"></div>
+        <a href="products.html"><p>See More</p></a>
+      </div>
+    </div>
+  </div>
+   <div class="section">
+    <h2>Best of Electronics</h2>
+    <div class="grid">
+      <div class="card">Smartphone</div>
+      <div class="card">Laptop</div>
+      <div class="card">Smartwatch</div>
+      <div class="card">Camera</div>
+    </div>
+  </div>
+   <div class="section">
+    <h2>Luxury Home Essentials</h2>
+    <div class="grid">
+      <div class="card">Designer Sofa</div>
+      <div class="card">Modern Lamp</div>
+      <div class="card">Premium Mattress</div>
+      <div class="card">Elegant Table</div>
+    </div>
+  </div>
+  <div class="section">
+    <h2>Sports Hub</h2>
+    <div class="grid">
+      <div class="card">Cricket  </div>
+      <div class="card">Basketball</div>
+      <div class="card">Gym Essentials</div>
+      <div class="card">Jersey & Gloves</div>
+    </div>
+  </div>
+  <div class="section">
+    <h2> Latest Fashion</h2>
+    <div class="grid">
+      <div class="card">Top Wear</div>
+      <div class="card">Bottom Wear</div>
+      <div class="card">Watches</div>
+      <div class="card">Suits, Blazers and Waistcoats</div>
+      <div class="card">Ethnic Wear</div>
+      <div class="card">Jewellery</div>
+      <div class="card">Footwear</div>
+      <div class="card">Beauty & Grooming</div>
+    </div>
+  </div>
+  <div class="section">
+    <h2>Home Appliances</h2>
+    <div class="grid">
+      <div class="card">Air Conditioner </div>
+      <div class="card">Television</div>
+      <div class="card">Washing Machine</div>
+      <div class="card">Refrigerators</div>
+      <div class="card">Kitchen Appliances</div>
+      <div class="card">New Launches</div>
+      <div class="card">Furniture</div>
+      </div>
+      <div class="section">
+        <h2>Top Brands</h2>
+        <div class="grid">
+          <div class="card">Phillips</div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div class="card">Bajaj</div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div class="card">Livpure</div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div class="card">Eureka Forbes</div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div class="card">IFB</div>
+        </div>
+      </div>
+    </div>
+    <div class="banner2">
+    </div>
+  </div>
+
+  <footer>
+    <div class="foot-panel1">
+      <ul>
+        <p>CAREERS</p>
+        <a>Blog</a>
+        <a>About LuxeTimeline</a>
+        <a>LuxeTimeline Devices</a>
+        <a>LuxeTimeline Sciences</a>
+      </ul>
+      <ul>
+        <p>COUSTOMER POLICY</p>
+        <a>Cancellation & Returns</a>
+        <a>Terms of use</a>
+        <a>Security</a>
+        <a>Privacy</a>
+      </ul>
+      <ul>
+        <p>MAIL US</p>
+        <a>Luxe Timeline Pvt. Limited ,</a>
+        <a>Nai Basti,</a>
+        <a>Jhansi,284002</a>
+        <a>Uttar Pradesh , India</a>
+      </ul>
+      <ul>
+        <p>SOCIAL MEDIA</p>
+        <a>Facebook</a>
+        <a>Instagram</a>
+        <a>X</a>
+        <a>Youtube</a>
+      </ul>
+    </div>
+    <div class="foot-panel2">
+      <div class="logo1 ">Luxe<span>𝕿𝖎𝖒𝖊𝖑𝖎𝖓𝖊</span></div>
+    </div>
+  <div class="foot-panel3"> &copy; 2025 LuxeTimeline. All rights reserved.</div>
+  </footer>
+</body>
+</html>
